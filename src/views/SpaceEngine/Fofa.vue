@@ -6,7 +6,7 @@ import { Search } from '@element-plus/icons-vue';
 
 const searchQuery = ref('');
 const fofaData = reactive({
-    tableData: [] as any[][]
+    tableData : [] as any[][]
 });
 
 const search = async () => {
@@ -33,6 +33,18 @@ const search = async () => {
                 </el-autocomplete>
                 <el-button type="primary" :icon="Search" @click="search"
                     style="margin-left: 10px; margin-right: 10px;">查询</el-button>
+                <!-- <el-dropdown>
+                    <el-button color="#A29EDE">
+                        数据导出/复制<el-icon class="el-icon--right"><arrow-down /></el-icon>
+                    </el-button>
+                    <template #dropdown>
+                        <el-dropdown-menu>
+                            <el-dropdown-item :icon="Share">导出当前查询页数据</el-dropdown-item>
+                            <el-dropdown-item :icon="Share">导出全部数据</el-dropdown-item>
+                            <el-dropdown-item :icon="CopyDocument" divided>复制当前页URL</el-dropdown-item>
+                        </el-dropdown-menu>
+                    </template>
+                </el-dropdown> -->
             </div>
         </el-form-item>
     </el-form>
@@ -48,7 +60,7 @@ const search = async () => {
         <el-tab-pane>
             <el-table :data="fofaData.tableData[0]" border style="width: 100%;height: 65vh;">
                 <el-table-column type="index" label="#" width="60px" />
-                <el-table-column prop="0" label="URL" width="200"></el-table-column>
+                <el-table-column prop="0" label="URL" width="200"/>
                 <el-table-column prop="1" label="标题" width="200" />
                 <el-table-column prop="2" label="端口" width="200" />
                 <el-table-column prop="3" label="IP" width="200" />
